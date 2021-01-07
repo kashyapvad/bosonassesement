@@ -52,7 +52,7 @@ public class UserManager {
         return user;
     }
 
-    public User addUser(String id, Float balance, String type) throws NullParameterException, BadParameterException {
+    public User addUser(String id, Float balance, String type) {
         User user = UserFactory.userBuilder(id, balance, type);
         userList.add(user);
         return user;

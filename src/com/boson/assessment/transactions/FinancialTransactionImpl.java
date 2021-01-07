@@ -12,7 +12,6 @@ public class FinancialTransactionImpl implements Transaction {
     private String makerId;
 
     public FinancialTransactionImpl(Integer id, Float amount, String makerId, Constants.FINANCIAL_TYPE type) throws NullParameterException, BadParameterException {
-
         setId(id);
         setType(type);
         setMakerId(makerId);
@@ -31,19 +30,34 @@ public class FinancialTransactionImpl implements Transaction {
         return this.makerId;
     }
 
-    public void setId(Integer id) {
+    public void setId(Integer id) throws NullParameterException {
+        if (id == null) {
+            throw new NullParameterException("Null value passed in for Item Name");
+        }
         this.id = id;
     }
 
-    public void setAmount(Float amount) {
+    public void setAmount(Float amount) throws NullParameterException {
+        if (amount == null) {
+            throw new NullParameterException("Null value passed in for Item Name");
+        }
         this.amount = amount;
     }
 
-    public void setMakerId(String makerId) {
+    public void setMakerId(String makerId) throws NullParameterException {
+        if (makerId == null) {
+            throw new NullParameterException("Null value passed in for Item Name");
+        }
         this.makerId = makerId;
     }
 
-    public void setType(Constants.FINANCIAL_TYPE type) {
+    public void setType(Constants.FINANCIAL_TYPE type) throws NullParameterException, BadParameterException {
+        if (type == null) {
+            throw new NullParameterException("Null value passed in for Item Name");
+        }
+        if(!Constants.isFinancial(type.toString())) {
+            throw new BadParameterException("Bad value passed in for Item Name: " + id);
+        }
         this.type = type;
     }
 

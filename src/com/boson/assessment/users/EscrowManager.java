@@ -2,12 +2,8 @@ package com.boson.assessment.users;
 
 import com.boson.assessment.exceptions.BadParameterException;
 import com.boson.assessment.exceptions.NullParameterException;
-import com.boson.assessment.orders.Order;
-
-import java.util.List;
 
 public class EscrowManager {
-    private List<Order> orderList;
     private Float balance = 0f;
     private static EscrowManager ourInstance;
 
@@ -21,17 +17,11 @@ public class EscrowManager {
         }
     }
 
-    public static final String FILENAME = "../taskableassesment/data/buyers.xml";
-
     public static EscrowManager getInstance() {
         return ourInstance;
     }
 
-    private EscrowManager() throws NullParameterException, BadParameterException {
-
-/*        XMLloaderBuyers loader = new XMLloaderBuyers();
-        buyerList = loader.getCustomerDataFromXML(FILENAME);*/
-    }
+    private EscrowManager() throws NullParameterException, BadParameterException { }
 
     public Float getBalance() {
         return balance;

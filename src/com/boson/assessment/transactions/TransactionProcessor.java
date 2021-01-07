@@ -1,8 +1,6 @@
 package com.boson.assessment.transactions;
 
 import com.boson.assessment.Constants;
-import com.boson.assessment.exceptions.BadParameterException;
-import com.boson.assessment.exceptions.NullParameterException;
 import com.boson.assessment.items.ItemCatalog;
 import com.boson.assessment.users.EscrowManager;
 import com.boson.assessment.users.User;
@@ -10,7 +8,7 @@ import com.boson.assessment.users.UserManager;
 
 public class TransactionProcessor {
 
-    public static void transactionProcessing() throws NullParameterException, BadParameterException {
+    public static void transactionProcessing() {
         Transaction transaction = TransactionManager.getInstance().getTransaction();
         while (transaction != null) {
             processCreditTransaction(transaction);
@@ -22,7 +20,7 @@ public class TransactionProcessor {
         }
     }
 
-    private static void processCreditTransaction(Transaction transaction) throws NullParameterException, BadParameterException {
+    private static void processCreditTransaction(Transaction transaction) {
         String userId = transaction.getMakerId();
         if (transaction.getStringType() == Constants.FINANCIAL_TYPE.Credit.toString()) {
             Float amount = ((FinancialTransactionImpl) transaction).getAmount();
@@ -34,7 +32,7 @@ public class TransactionProcessor {
         }
     }
 
-    private static void processOfferTransaction(Transaction transaction) throws NullParameterException, BadParameterException {
+    private static void processOfferTransaction(Transaction transaction) {
         String userId = transaction.getMakerId();
         if (transaction.getStringType() == Constants.TRADE_TYPE.Offer.toString()) {
             if (UserManager.getInstance().getIdSet().contains(userId)) {
@@ -48,7 +46,7 @@ public class TransactionProcessor {
         }
     }
 
-    private static void processOrderTransaction(Transaction transaction) throws NullParameterException, BadParameterException {
+    private static void processOrderTransaction(Transaction transaction) {
         String userId = transaction.getMakerId();
         if (transaction.getStringType() == Constants.TRADE_TYPE.Order.toString()) {
             String itemId = ((TradeTransactionImpl) transaction).getItemId();
@@ -57,7 +55,7 @@ public class TransactionProcessor {
         }
     }
 
-    private static void processCompleteTransaction(Transaction transaction) throws NullParameterException, BadParameterException {
+    private static void processCompleteTransaction(Transaction transaction) {
         String userId = transaction.getMakerId();
         if (transaction.getStringType() == Constants.TRADE_TYPE.Complete.toString()) {
             String itemId = ((TradeTransactionImpl) transaction).getItemId();
@@ -68,7 +66,7 @@ public class TransactionProcessor {
         }
     }
 
-    private static void processComplainTransaction(Transaction transaction) throws NullParameterException, BadParameterException {
+    private static void processComplainTransaction(Transaction transaction) {
         String userId = transaction.getMakerId();
         if (transaction.getStringType() == Constants.TRADE_TYPE.Complain.toString()) {
             String itemId = ((TradeTransactionImpl) transaction).getItemId();

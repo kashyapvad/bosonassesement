@@ -1,8 +1,5 @@
 package com.boson.assessment.users;
 
-import com.boson.assessment.exceptions.BadParameterException;
-import com.boson.assessment.exceptions.NullParameterException;
-
 import java.util.Map;
 
 public class SellerImpl implements User {
@@ -15,10 +12,6 @@ public class SellerImpl implements User {
         return id;
     }
 
-    public Account getAccount() {
-        return account;
-    }
-
     public void setId(String id) {
         this.id = id;
     }
@@ -27,11 +20,11 @@ public class SellerImpl implements User {
         this.itemsToSell = itemsToSell;
     }
 
-    public void setAccount(Float balance) throws NullParameterException, BadParameterException {
+    public void setAccount(Float balance) {
         this.account = new Account(id, balance);
     }
 
-    public SellerImpl(String id, Float balance, Map<String, Integer> itemsToSell) throws NullParameterException, BadParameterException {
+    public SellerImpl(String id, Float balance, Map<String, Integer> itemsToSell) {
         setId(id);
         setItemsToSell(itemsToSell);
         setAccount(balance);

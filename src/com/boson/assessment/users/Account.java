@@ -1,8 +1,5 @@
 package com.boson.assessment.users;
 
-import com.boson.assessment.exceptions.BadParameterException;
-import com.boson.assessment.exceptions.NullParameterException;
-
 public class Account {
     private Float balance;
     private String ownerId;
@@ -23,7 +20,7 @@ public class Account {
         this.balance = balance;
     }
 
-    public Account(String ownerId, Float balance) throws NullParameterException, BadParameterException {
+    public Account(String ownerId, Float balance) {
         setOwnerId(ownerId);
         setBalance(balance);
     }

@@ -13,7 +13,17 @@ public class TransactionFactory {
                                                  String typeString,
                                                  String amountString,
                                                  String itemId,
-                                                 String priceString) throws NullParameterException, BadParameterException {
+                                                 String priceString) {
+        return createTransaction(id, makerId, typeString, amountString, itemId, priceString);
+    }
+
+
+    private static Transaction createTransaction(Integer id,
+                                                 String makerId,
+                                                 String typeString,
+                                                 String amountString,
+                                                 String itemId,
+                                                 String priceString){
         Transaction transaction = null;
         try {
             if (Constants.isFinancial(typeString)) {
@@ -28,7 +38,7 @@ public class TransactionFactory {
                 }
                 transaction = new TradeTransactionImpl(id, makerId, type, itemId);
             }
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException | NullParameterException | BadParameterException e) {
             System.out.println(typeString + " is not a valid type of transaction");
         }
         return transaction;

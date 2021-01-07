@@ -27,11 +27,11 @@ public class BuyerImpl implements User {
         this.itemsBought = itemsBought;
     }
 
-    public void setAccount(Float balance) throws NullParameterException, BadParameterException {
+    public void setAccount(Float balance) {
         this.account = new Account(id, balance);
     }
 
-    public BuyerImpl(String id, Float balance, Map<String, Integer> itemsBought) throws NullParameterException, BadParameterException {
+    public BuyerImpl(String id, Float balance, Map<String, Integer> itemsBought) {
         setId(id);
         setItemsBought(itemsBought);
         setAccount(balance);
