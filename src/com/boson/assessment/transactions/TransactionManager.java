@@ -31,19 +31,9 @@ public class TransactionManager {
         transactionList = loader.getTransactionDataFromXML(FILENAME);
     }
 
-    public void processTransactions() throws NullParameterException, BadParameterException {
+    public void processTransactions() {
         TransactionProcessor.transactionProcessing();
     }
-
-/*    public void printOrders() {
-        for (Transaction o : transactionList) {
-            System.out.print("Id: " + ((TradeTransactionImpl) o).getId() + "       ");
-            System.out.print("Total Price: " + ((TradeTransactionImpl) o).getTotalPrice() + "       ");
-            System.out.print("Customer ID: " + ((TradeTransactionImpl) o).getCustomerId() + "       ");
-            System.out.print("Item Line: " + ((TradeTransactionImpl) o).getItemLine() + "       ");
-            System.out.println();
-        }
-    }*/
 
     public List<Transaction> transactions(){
         return transactionList;
