@@ -1,24 +1,37 @@
 package com.boson.assessment;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public final class Constants {
 
     private Constants() {
     }
 
+    public static final List<String> TRANSACTION_CLASSES = Collections.unmodifiableList(
+            new ArrayList<>() {{
+                add("com.boson.assessment.types.CreditTransaction");
+                add("com.boson.assessment.types.OrderTransaction");
+                add("com.boson.assessment.types.OfferTransaction");
+                add("com.boson.assessment.types.ComplainTransaction");
+                add("com.boson.assessment.types.CompleteTransaction");
+            }});
 
-    public enum TRADE_TYPE {
+
+    public enum TRADE_KIND {
         Offer,
         Order,
         Complete,
         Complain
     }
 
-    public enum FINANCIAL_TYPE {
+    public enum FINANCIAL_KIND {
         Credit
     }
 
     public static boolean isTrade(String type) {
-        for (TRADE_TYPE t : TRADE_TYPE.values()) {
+        for (TRADE_KIND t : TRADE_KIND.values()) {
             if (t.name().equals(type)) {
                 return true;
             }
@@ -28,7 +41,7 @@ public final class Constants {
     }
 
     public static boolean isFinancial(String type) {
-        for (FINANCIAL_TYPE t : FINANCIAL_TYPE.values()) {
+        for (FINANCIAL_KIND t : FINANCIAL_KIND.values()) {
             if (t.name().equals(type)) {
                 return true;
             }

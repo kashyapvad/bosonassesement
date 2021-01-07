@@ -35,10 +35,6 @@ public class TransactionManager {
         TransactionProcessor.transactionProcessing();
     }
 
-    public List<Transaction> transactions(){
-        return transactionList;
-    }
-
     public Transaction getTransaction() {
         if (transactionList.size() >= 1) {
             Transaction transaction = transactionList.get(0);

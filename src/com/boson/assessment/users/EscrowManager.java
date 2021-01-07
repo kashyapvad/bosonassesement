@@ -21,7 +21,8 @@ public class EscrowManager {
         return ourInstance;
     }
 
-    private EscrowManager() throws NullParameterException, BadParameterException { }
+    private EscrowManager() throws NullParameterException, BadParameterException {
+    }
 
     public Float getBalance() {
         return balance;

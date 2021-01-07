@@ -23,16 +23,16 @@ public class TransactionFactory {
                                                  String typeString,
                                                  String amountString,
                                                  String itemId,
-                                                 String priceString){
+                                                 String priceString) {
         Transaction transaction = null;
         try {
             if (Constants.isFinancial(typeString)) {
-                Constants.FINANCIAL_TYPE type = Constants.FINANCIAL_TYPE.valueOf(typeString);
+                Constants.FINANCIAL_KIND type = Constants.FINANCIAL_KIND.valueOf(typeString);
                 Float amount = Float.parseFloat(amountString);
                 transaction = new FinancialTransactionImpl(id, amount, makerId, type);
-            } else if(Constants.isTrade(typeString)) {
-                Constants.TRADE_TYPE type = Constants.TRADE_TYPE.valueOf(typeString);
-                if(!ItemCatalog.getInstance().getIdSet().contains(itemId)){
+            } else if (Constants.isTrade(typeString)) {
+                Constants.TRADE_KIND type = Constants.TRADE_KIND.valueOf(typeString);
+                if (!ItemCatalog.getInstance().getIdSet().contains(itemId)) {
                     Float price = Float.parseFloat(priceString);
                     ItemCatalog.getInstance().addItem(itemId, price, makerId);
                 }

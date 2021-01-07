@@ -7,11 +7,11 @@ import com.boson.assessment.exceptions.NullParameterException;
 public class FinancialTransactionImpl implements Transaction {
 
     private Integer id;
-    private Constants.FINANCIAL_TYPE type;
+    private Constants.FINANCIAL_KIND type;
     private Float amount;
     private String makerId;
 
-    public FinancialTransactionImpl(Integer id, Float amount, String makerId, Constants.FINANCIAL_TYPE type) throws NullParameterException, BadParameterException {
+    public FinancialTransactionImpl(Integer id, Float amount, String makerId, Constants.FINANCIAL_KIND type) throws NullParameterException, BadParameterException {
         setId(id);
         setType(type);
         setMakerId(makerId);
@@ -51,17 +51,17 @@ public class FinancialTransactionImpl implements Transaction {
         this.makerId = makerId;
     }
 
-    public void setType(Constants.FINANCIAL_TYPE type) throws NullParameterException, BadParameterException {
+    public void setType(Constants.FINANCIAL_KIND type) throws NullParameterException, BadParameterException {
         if (type == null) {
             throw new NullParameterException("Null value passed in for Item Name");
         }
-        if(!Constants.isFinancial(type.toString())) {
+        if (!Constants.isFinancial(type.toString())) {
             throw new BadParameterException("Bad value passed in for Item Name: " + id);
         }
         this.type = type;
     }
 
-    public String getStringType(){
+    public String getStringType() {
         return type.toString();
     }
 }

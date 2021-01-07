@@ -22,16 +22,11 @@ public class UserManager {
         }
     }
 
-    public static final String FILENAME = "../taskableassesment/data/buyers.xml";
-
     public static UserManager getInstance() {
         return ourInstance;
     }
 
     private UserManager() throws NullParameterException, BadParameterException {
-
-/*        XMLloaderBuyers loader = new XMLloaderBuyers();
-        buyerList = loader.getCustomerDataFromXML(FILENAME);*/
     }
 
     public Set<String> getIdSet() {
@@ -44,8 +39,8 @@ public class UserManager {
 
     public User getUser(String userId) {
         User user = null;
-        for (User u: userList) {
-            if(u.getId().equals(userId)){
+        for (User u : userList) {
+            if (u.getId().equals(userId)) {
                 user = u;
             }
         }
@@ -58,7 +53,7 @@ public class UserManager {
         return user;
     }
 
-    public void addItem(String userId, String itemId){
+    public void addItem(String userId, String itemId) {
         for (User user : userList) {
             if (user.getId().equals(userId)) {
                 user.addItem(itemId);
@@ -67,7 +62,7 @@ public class UserManager {
         }
     }
 
-    public void removeItem(String userId, String itemId){
+    public void removeItem(String userId, String itemId) {
         for (User user : userList) {
             if (user.getId().equals(userId)) {
                 user.removeItem(itemId);
@@ -76,7 +71,7 @@ public class UserManager {
         }
     }
 
-    public void addBalance(String userId, Float amount){
+    public void addBalance(String userId, Float amount) {
         for (User user : userList) {
             if (user.getId().equals(userId)) {
                 user.addBalance(amount);
@@ -84,45 +79,6 @@ public class UserManager {
             }
         }
     }
-
-/*    public void addMembership(Integer id, String membership) {
-        for (User c : userList) {
-            if (((BuyerImpl) c).getId().equals(id)) {
-                c.addMembership(membership);
-                break;
-            }
-        }
-    }
-
-    public void addPhysicalItem(Integer customerId, String type, Integer itemId) {
-        for (User c : userList) {
-            if (((BuyerImpl) c).getId().equals(customerId)) {
-                c.addPhysicalItem(type, itemId);
-                break;
-            }
-        }
-    }
-
-    public Boolean membershipExists(Integer customerId, String membership) {
-        Boolean exists = false;
-        for (User c : userList) {
-            if (((BuyerImpl) c).getId().equals(customerId)) {
-                exists = ((BuyerImpl) c).getMemberships().contains(membership);
-            }
-        }
-        return exists;
-    }
-
-    public String getAddress(Integer customerId) {
-        String address = "";
-        for (User c : userList) {
-            if (((BuyerImpl) c).getId().equals(customerId)) {
-                address = ((BuyerImpl) c).getAddress();
-                break;
-            }
-        }
-        return address;
-    }*/
 
     public void printReport() {
         for (User user : userList) {

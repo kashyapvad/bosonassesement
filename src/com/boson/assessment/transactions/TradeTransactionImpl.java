@@ -7,11 +7,11 @@ import com.boson.assessment.exceptions.NullParameterException;
 public class TradeTransactionImpl implements Transaction {
 
     private Integer id;
-    private Constants.TRADE_TYPE type;
+    private Constants.TRADE_KIND type;
     private String makerId;
     private String itemId;
 
-    public TradeTransactionImpl(Integer id, String makerId, Constants.TRADE_TYPE type, String itemId) throws NullParameterException, BadParameterException {
+    public TradeTransactionImpl(Integer id, String makerId, Constants.TRADE_KIND type, String itemId) throws NullParameterException, BadParameterException {
         setId(id);
         setType(type);
         setMakerId(makerId);
@@ -51,17 +51,17 @@ public class TradeTransactionImpl implements Transaction {
         this.makerId = makerId;
     }
 
-    public void setType(Constants.TRADE_TYPE type) throws NullParameterException, BadParameterException {
+    public void setType(Constants.TRADE_KIND type) throws NullParameterException, BadParameterException {
         if (type == null) {
             throw new NullParameterException("Null value passed in for Item Name");
         }
-        if(!Constants.isTrade(type.toString())) {
+        if (!Constants.isTrade(type.toString())) {
             throw new BadParameterException("Bad value passed in for Item Name: " + id);
         }
         this.type = type;
     }
 
-    public String getStringType(){
+    public String getStringType() {
         return type.toString();
     }
 }

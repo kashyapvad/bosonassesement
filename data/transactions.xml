@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <Transactions>
      <Transaction>
           <Id>1</Id>
@@ -29,7 +28,7 @@
      <Transaction>
           <Id>4</Id>
           <Type>Offer</Type>
-          <MakerId>Seller 1</MakerId>
+          <MakerId>Seller 2</MakerId>
           <Item>
                <ItemId>T-Shirt</ItemId>
                <Price>5</Price>

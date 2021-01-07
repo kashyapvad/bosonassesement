@@ -37,16 +37,17 @@ public class SellerImpl implements User {
     public void addBalance(Float amount) {
         this.account.addBalance(amount);
     }
+
     public void removeBalance(Float amount) {
         this.account.removeBalance(amount);
     }
 
     public void addItem(String itemId) {
-        if(itemsToSell.keySet().contains(itemId)){
+        if (itemsToSell.keySet().contains(itemId)) {
             Integer count = itemsToSell.get(itemId) + 1;
             itemsToSell.put(itemId, count);
         } else
-        itemsToSell.put(itemId, 0);
+            itemsToSell.put(itemId, 0);
     }
 
     public void removeItem(String itemId) {
