@@ -7,7 +7,7 @@
 
 ## Design:
 
-1. supports multiple sellers, buyers, and items, not just the ones in default input.
+1. supports multiple sellers, buyers, and items, not just the ones in default input and more than one of the same item.
 2. Most of the design adheres to SOLID principles.
 3. used enum class for transaction types that only supports the following:
    1. Credit
