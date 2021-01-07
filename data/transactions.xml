@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<Transactions>
+     <Transaction>
+          <Id>1</Id>
+          <Type>Credit</Type>
+          <MakerId>Buyer 1</MakerId>
+          <Amount>20</Amount>
+     </Transaction>
+
+     <Transaction>
+          <Id>2</Id>
+          <Type>Credit</Type>
+          <MakerId>Buyer 2</MakerId>
+          <Amount>40</Amount>
+     </Transaction>
+
+     <Transaction>
+          <Id>3</Id>
+          <Type>Offer</Type>
+          <MakerId>Seller 1</MakerId>
+          <Item>
+               <ItemId>Coffee</ItemId>
+               <Price>3</Price>
+          </Item>
+     </Transaction>
+
+     <Transaction>
+          <Id>4</Id>
+          <Type>Offer</Type>
+          <MakerId>Seller 1</MakerId>
+          <Item>
+               <ItemId>T-Shirt</ItemId>
+               <Price>5</Price>
+          </Item>
+     </Transaction>
+
+     <Transaction>
+          <Id>5</Id>
+          <Type>Offer</Type>
+          <MakerId>Seller 1</MakerId>
+          <Item>
+               <ItemId>Tea</ItemId>
+               <Price>2.5</Price>
+          </Item>
+     </Transaction>
+
+     <Transaction>
+          <Id>6</Id>
+          <Type>Offer</Type>
+          <MakerId>Seller 1</MakerId>
+          <Item>
+               <ItemId>Cake</ItemId>
+               <Price>3.5</Price>
+          </Item>
+     </Transaction>
+
+     <Transaction>
+          <Id>7</Id>
+          <Type>Offer</Type>
+          <MakerId>Seller 2</MakerId>
+          <Item>
+               <ItemId>Shorts</ItemId>
+               <Price>8</Price>
+          </Item>
+     </Transaction>
+
+     <Transaction>
+          <Id>8</Id>
+          <Type>Offer</Type>
+          <MakerId>Seller 2</MakerId>
+          <Item>
+               <ItemId>Hoody</ItemId>
+               <Price>12</Price>
+          </Item>
+     </Transaction>
+
+     <Transaction>
+          <Id>9</Id>
+          <Type>Order</Type>
+          <MakerId>Buyer 1</MakerId>
+          <Item>
+               <ItemId>T-Shirt</ItemId>
+               <Price></Price>
+          </Item>
+     </Transaction>
+
+     <Transaction>
+          <Id>10</Id>
+          <Type>Credit</Type>
+          <Amount>10</Amount>
+          <MakerId>Buyer 1</MakerId>
+     </Transaction>
+
+     <Transaction>
+          <Id>11</Id>
+          <Type>Order</Type>
+          <MakerId>Buyer 2</MakerId>
+          <Item>
+               <ItemId>Hoody</ItemId>
+               <Price></Price>
+          </Item>
+     </Transaction>
+
+     <Transaction>
+          <Id>12</Id>
+          <Type>Complete</Type>
+          <MakerId>Buyer 1</MakerId>
+          <Item>
+               <ItemId>T-Shirt</ItemId>
+          </Item>
+     </Transaction>
+
+     <Transaction>
+          <Id>13</Id>
+          <Type>Order</Type>
+          <MakerId>Buyer 1</MakerId>
+          <Item>
+               <ItemId>Coffee</ItemId>
+          </Item>
+     </Transaction>
+
+     <Transaction>
+          <Id>14</Id>
+          <Type>Order</Type>
+          <MakerId>Buyer 1</MakerId>
+          <Item>
+               <ItemId>Cake</ItemId>
+          </Item>
+     </Transaction>
+
+     <Transaction>
+          <Id>15</Id>
+          <Type>Complain</Type>
+          <MakerId>Buyer 2</MakerId>
+          <Item>
+               <ItemId>Hoody</ItemId>
+          </Item>
+     </Transaction>
+
+     <Transaction>
+          <Id>16</Id>
+          <Type>Order</Type>
+          <MakerId>Buyer 2</MakerId>
+          <Item>
+               <ItemId>Tea</ItemId>
+          </Item>
+     </Transaction>
+
+     <Transaction>
+          <Id>17</Id>
+          <Type>Complete</Type>
+          <MakerId>Buyer 1</MakerId>
+          <Item>
+               <ItemId>Coffee</ItemId>
+          </Item>
+     </Transaction>
+</Transactions>
+
